@@ -17,4 +17,4 @@ jobs:
     - run: sudo wget https://wordpress.org/latest.tar.gz
     - run: sudo tar -xvf latest.tar.gz
     - run: sudo cp -R wordpress /var/www/html/
-    - run: chown -R www-data:www-data /var/www/html/wordpress/
+    - run: sudo chown -R www-data:www-data /var/www/html/wordpress/
