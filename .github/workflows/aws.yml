@@ -1,0 +1,20 @@
+name: Node.js CI
+
+on:
+  push:
+    branches: [ "main" ]
+
+jobs:
+  build:
+
+    runs-on: self-hosted
+
+    steps:
+    - uses: actions/checkout@v3
+    - name: Download Wordpress
+      uses: actions/setup-node@v3
+    - run: cd /var/www/html/
+    - run: sudo wget https://wordpress.org/latest.tar.gz
+    - run: sudo tar -xvf latest.tar.gz
+    - run: sudo cp -R wordpress /var/www/html/
+    - run: chown -R www-data:www-data /var/www/html/wordpress/
